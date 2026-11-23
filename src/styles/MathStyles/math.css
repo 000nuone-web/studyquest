@@ -1,0 +1,165 @@
+
+/* ページ全体 */
+.math-page {
+  background-image: url("../../assets/MathAssets/math-back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  min-height: 100vh;
+  width: 100%;
+
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+
+  text-shadow: 1px 1px 3px black;
+}
+
+/* 2列×2行のレイアウト */
+.math-grid-container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50% 50%;
+
+  min-height: 100vh;
+}
+
+/* 各エリア */
+.math-grid-item {
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* 見出し */
+.math-grid-item h2 {
+  font-family: "游明朝", "Yu Mincho", "MS 明朝", serif;
+  font-size: 35px;
+
+  margin: 0.83em 0;
+}
+
+/* アイコン一覧 */
+.math-icon-row {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+
+  justify-content: center;
+
+  gap: 30px 40px;
+
+  margin-top: 20px;
+
+  width: 100%;
+  max-width: 600px;
+}
+
+/* アイコンの枠 */
+.math-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 280px;
+  height: auto;
+
+  border-radius: 12px;
+  overflow: visible;
+
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+/* アイコン画像 */
+.math-icon-container img {
+  width: 100%;
+  height: 154px;
+
+  object-fit: cover;
+  display: block;
+
+  border-radius: 12px;
+}
+
+/* ホバー時 */
+.math-icon-container:hover {
+  transform: scale(1.05);
+}
+
+/* スマホ対応 */
+@media (max-width: 700px) {
+  .math-grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .math-grid-item {
+    min-height: 300px;
+  }
+
+  .math-icon-row {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    );
+
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .math-icon-container {
+    width: 220px;
+    height: 121px;
+  }
+
+  .math-grid-item h2 {
+    font-size: 28px;
+  }
+}
+
+/* アイコンとタイトルをまとめる */
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* 画像の下に表示するタイトル */
+.category-item-title {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+
+/* =========================
+   アイコン下のタイトル
+========================= */
+.math-icon-title {
+  display: block;
+
+  margin-top: 8px;
+  margin-bottom: 0;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  color: white;
+  text-align: center;
+
+  text-shadow: 1px 1px 3px black;
+}
